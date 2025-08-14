@@ -1,0 +1,41 @@
+logging:
+  file: "agent.log"
+  level: "INFO"
+
+webui:
+  secret_key: "${WEBUI_SECRET_KEY:-change-this-secret}"
+  admin_user: "${WEBUI_ADMIN_USER:-admin}"
+  admin_password: "${WEBUI_ADMIN_PASSWORD:-admin123}"
+
+notifications:
+  email:
+    enabled: false
+    from_email: "${EMAIL_FROM:-noreply@example.com}"
+    to_email: "${EMAIL_TO:-admin@example.com}"
+    smtp_server: "${SMTP_SERVER:-smtp.example.com}"
+    smtp_port: 587
+    username: "${EMAIL_USER:-user}"
+    password: "${EMAIL_PASS:-pass}"
+  slack:
+    enabled: false
+    token: "${SLACK_TOKEN:-xoxb-...}"
+    channel: "${SLACK_CHANNEL:-#general}"
+
+enabled_plugins:
+  - dir_watcher
+  - web_scraper
+  - rss_feed_reader
+
+schedules:
+  Directory Watcher: 10
+  Web Scraper: 60
+  RSS Feed Reader: 300
+
+dir_watcher:
+  watch_dir: "./watched"
+
+web_scraper:
+  url: "https://example.com"
+
+rss_feed_reader:
+  feed_url: "https://news.ycombinator.com/rss"
