@@ -1,0 +1,12 @@
+Flask>=2.2
+PyYAML
+schedule
+slack_sdk
+feedparser
+requests
+python-dotenv
+Werkzeug
+flask-login
+flask-wtf
+email-validator
+pytest
